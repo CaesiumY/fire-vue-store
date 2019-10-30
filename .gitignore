@@ -34,3 +34,6 @@ yarn-error.log*
 .firebase/
 
 # End of https://www.gitignore.io/api/firebase
+
+## Secret Tokens
+tokens.json
