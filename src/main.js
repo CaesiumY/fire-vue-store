@@ -3,7 +3,8 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 import "./registerServiceWorker";
-import * as firebase from "firebase";
+import * as firebase from "firebase/app";
+import "firebase/firebase-messaging";
 import token from "../tokens.json";
 /* eslint-disable no-console */
 
@@ -22,14 +23,14 @@ firebase.initializeApp(firebaseConfig);
 
 const messaging = firebase.messaging();
 messaging.usePublicVapidKey(token.gcm_sender_id);
+// Notification.requestPermission();
 
 Notification.requestPermission().then(permission => {
   if (permission === "granted") {
     console.log("Notification permission granted.");
-    // TODO(developer): Retrieve an Instance ID token for use with FCM.
-    // ...
+
     messaging.getToken().then(token => {
-      console.log(token);
+      console.log("token: ", token);
     });
   } else {
     console.log("Unable to get permission to notify.");
