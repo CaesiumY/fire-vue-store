@@ -1,10 +1,8 @@
 <template>
   <div class="nav">
-    <ul>
-      <router-link to="/">Home</router-link>
-      <span class="br">|</span>
-      <router-link to="/review">Review</router-link>
-    </ul>
+    <router-link to="/">Home</router-link>
+    <span class="br">|</span>
+    <router-link to="/review">Review</router-link>
   </div>
 </template>
 
@@ -14,6 +12,7 @@ export default {};
 
 <style scoped>
 .nav {
+  margin-top: 10px;
   padding: 15px;
   font-size: 2rem;
   display: flex;
