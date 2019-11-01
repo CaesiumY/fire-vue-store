@@ -3,7 +3,6 @@
     <div class="commentsTitle">
       <h1>리뷰 목록</h1>
     </div>
-    <br />
     <main class="reviewMain">
       <div class="reviews" v-for="review in reviews" :key="review.id">
         <h3 class="reviewTitle">{{review.title}}</h3>
@@ -43,4 +42,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.reviews {
+  margin-top: 55px;
+}
+</style>
