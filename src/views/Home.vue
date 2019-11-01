@@ -1,12 +1,20 @@
 <template>
-  <div></div>
+  <div>
+    <Choices />
+    <Suggestion />
+  </div>
 </template>
 
 <script>
+import Choices from "../components/Choices";
+import Suggestion from "../components/Suggestion";
+
 export default {
-  components: {}
+  components: {
+    Choices,
+    Suggestion
+  }
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

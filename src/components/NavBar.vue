@@ -30,8 +30,4 @@ export default {};
 .nav a.router-link-exact-active {
   color: #eb2f06;
 }
-
-.br {
-  flex: 2;
-}
 </style>

@@ -1,10 +1,17 @@
 <template>
-  <div></div>
+  <div>
+    <Comments />
+  </div>
 </template>
 
 <script>
-export default {};
+import Comments from "../components/Comments";
+
+export default {
+  components: {
+    Comments
+  }
+};
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

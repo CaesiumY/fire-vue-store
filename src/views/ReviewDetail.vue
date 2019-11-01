@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>전체 목록</h2>
+    <h2>리뷰 상세</h2>
   </div>
 </template>
 
