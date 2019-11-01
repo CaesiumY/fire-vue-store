@@ -17,7 +17,7 @@ export default {};
   padding: 15px;
   font-size: 2rem;
   display: flex;
-  align-content: center;
+  align-items: center;
   justify-content: center;
   flex-grow: 2;
 }
