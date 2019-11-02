@@ -20,6 +20,7 @@ const routes = [
   {
     path: "/review/:id",
     name: "reviewDetail",
+    props: true,
     component: ReviewDetail
   }
 ];

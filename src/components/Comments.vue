@@ -4,13 +4,19 @@
       <h1>리뷰 목록</h1>
     </div>
     <main class="reviewMain">
-      <div class="reviews" v-for="review in reviews" :key="review.id">
-        <h3 class="reviewTitle">{{review.title}}</h3>
-        <p class="reviewBody">{{review.body}}</p>
+      <router-link
+        :to="{name: 'reviewDetail', params: {id:review._id, review:review}}"
+        tag="div"
+        class="reviews"
+        v-for="review in reviews"
+        :key="review.id"
+      >
+        <h3 class="reviewTitle">{{ review.title }}</h3>
+        <p class="reviewBody">{{ review.body }}</p>
         <div class="reviewTags">
-          <span class="reviewTag" v-for="(tag, index) in review.tags" :key="index">#{{tag}}</span>
+          <span class="reviewTag" v-for="(tag, index) in review.tags" :key="index">#{{ tag }}</span>
         </div>
-      </div>
+      </router-link>
     </main>
   </div>
 </template>
