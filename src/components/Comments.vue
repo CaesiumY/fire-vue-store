@@ -25,6 +25,7 @@
 </template>
 
 <script>
+import { db } from "../main.js";
 export default {
   data() {
     return {
@@ -37,13 +38,17 @@ export default {
     };
   },
   created() {
-    db.collection("review")
+    db.collection("reviews")
       .get()
       .then(snapshot => {
         snapshot.forEach(doc => {
           let review = doc.data();
+          review._id = doc.id;
+          this.reviews.push(review);
         });
       });
+
+    console.log("reviews:", this.reviews);
   }
 };
 </script>
