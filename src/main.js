@@ -4,6 +4,7 @@ import router from "./router";
 import store from "./store";
 import "./registerServiceWorker";
 import * as firebase from "firebase/app";
+import "firebase/firestore";
 import "firebase/firebase-messaging";
 import token from "../tokens.json";
 /* eslint-disable no-console */
@@ -20,7 +21,11 @@ const firebaseConfig = {
   appId: token.firebaseConfig.appId
 };
 firebase.initializeApp(firebaseConfig);
+firebase.firestore().settings({ timestampsInSnapshots: true });
 
+export const db = firebase.firestore();
+
+// fcm part
 const messaging = firebase.messaging();
 messaging.usePublicVapidKey(token.gcm_sender_id);
 // Notification.requestPermission();
