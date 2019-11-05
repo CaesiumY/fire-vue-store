@@ -20,4 +20,9 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.detailTag {
+  margin: 5px;
+  color: #3498db;
+}
+</style>
