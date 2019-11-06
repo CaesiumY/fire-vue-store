@@ -17,7 +17,12 @@
         <h3 class="reviewTitle">{{ review.title }}</h3>
         <p class="reviewBody">{{ review.body }}</p>
         <div class="reviewTags">
-          <span class="reviewTag" v-for="(tag, index) in review.tags" :key="index"># {{ tag }}</span>
+          <span
+            class="reviewTag"
+            v-for="(tag, index) in review.tags"
+            :key="index"
+            ># {{ tag }}</span
+          >
         </div>
       </router-link>
     </main>
@@ -25,7 +30,7 @@
 </template>
 
 <script>
-import { db } from "../main.js";
+import { db } from "../firebase/store";
 export default {
   data() {
     return {
@@ -47,8 +52,6 @@ export default {
           this.reviews.push(review);
         });
       });
-
-    console.log("reviews:", this.reviews);
   }
 };
 </script>
