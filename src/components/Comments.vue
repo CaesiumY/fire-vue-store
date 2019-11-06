@@ -17,14 +17,10 @@
         <h3 class="reviewTitle">{{ review.title }}</h3>
         <p class="reviewBody">{{ review.body }}</p>
         <div class="reviewTags">
-          <span
-            class="reviewTag"
-            v-for="(tag, index) in review.tags"
-            :key="index"
-            ># {{ tag }}</span
-          >
+          <span class="reviewTag" v-for="(tag, index) in review.tags" :key="index"># {{ tag }}</span>
         </div>
       </router-link>
+      <p v-if="notLoaded" class="loading">로딩중...</p>
     </main>
   </div>
 </template>
@@ -39,7 +35,8 @@ export default {
       tags: [],
       feedback: null,
       anotherTag: null,
-      reviews: []
+      reviews: [],
+      notLoaded: true
     };
   },
   created() {
@@ -50,6 +47,7 @@ export default {
           let review = doc.data();
           review._id = doc.id;
           this.reviews.push(review);
+          this.notLoaded = false;
         });
       });
   }
