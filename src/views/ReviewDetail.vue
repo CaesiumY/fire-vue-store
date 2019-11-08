@@ -6,10 +6,10 @@
       <h3 class="detailTitle">{{ review.title }}</h3>
       <div class="detailBody">{{ review.body }}</div>
       <div class="detailTags">
-        <span class="detailTag" v-for="(tag, index) in review.tags" :key="index"
-          ># {{ tag }}</span
-        >
+        <span class="detailTag" v-for="(tag, index) in review.tags" :key="index"># {{ tag }}</span>
       </div>
+      <div v-if="review.test" class="detailTimestamp">{{ review.test }}</div>
+      <div v-else class="detailTimestamp">시간 기록 없음</div>
     </main>
   </div>
 </template>

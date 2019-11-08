@@ -31,6 +31,7 @@
 
 <script>
 import { db } from "../firebase/store";
+// import { time } from "../firebase/store";
 export default {
   props: ["reviews"],
   data() {
@@ -59,7 +60,8 @@ export default {
           .add({
             title: this.title,
             body: this.body,
-            tags: this.tags
+            tags: this.tags,
+            timestamp: "test"
           })
           .then(() => {
             this.reviews.push({
