@@ -64,7 +64,7 @@ export default {
             timestamp: new Date()
           })
           .then(() => {
-            this.reviews.push({
+            this.reviews.unshift({
               title: this.title,
               body: this.body,
               tags: this.tags
