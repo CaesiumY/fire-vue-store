@@ -36,6 +36,7 @@ export default {
   },
   created() {
     db.collection("reviews")
+      .orderBy("timestamp", "desc")
       .get()
       .then(snapshot => {
         snapshot.forEach(doc => {
