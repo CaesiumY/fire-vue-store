@@ -1,7 +1,7 @@
 <template>
   <div>
-    <Comments />
-    <AddReview />
+    <Comments :reviews="reviews" />
+    <AddReview :reviews="reviews" />
   </div>
 </template>
 
@@ -12,6 +12,11 @@ export default {
   components: {
     Comments,
     AddReview
+  },
+  data() {
+    return {
+      reviews: []
+    };
   }
 };
 </script>

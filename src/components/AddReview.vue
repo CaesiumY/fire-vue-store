@@ -1,6 +1,6 @@
 <template>
   <div>
-    <form>
+    <form @submit.prevent="addReview">
       <h2>새로운 리뷰</h2>
       <div>
         <label for="title">제목</label>
@@ -30,7 +30,9 @@
 </template>
 
 <script>
+import { db } from "../firebase/store";
 export default {
+  props: ["reviews"],
   data() {
     return {
       title: null,
@@ -48,6 +50,29 @@ export default {
         this.feedback = null;
       } else {
         this.feedback = "태그 내용을 입력하세요";
+      }
+    },
+    addReview() {
+      if (this.title) {
+        this.feedback = null;
+        db.collection("reviews")
+          .add({
+            title: this.title,
+            body: this.body,
+            tags: this.tags
+          })
+          .then(() => {
+            this.reviews.push({
+              title: this.title,
+              body: this.body,
+              tags: this.tags
+            });
+            this.title = null;
+            this.body = null;
+            this.tags = null;
+          });
+      } else {
+        this.feedback = "제목을 입력하세요";
       }
     }
   }
