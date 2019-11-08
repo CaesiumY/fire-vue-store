@@ -8,7 +8,7 @@
       <div class="detailTags">
         <span class="detailTag" v-for="(tag, index) in review.tags" :key="index"># {{ tag }}</span>
       </div>
-      <div v-if="review.test" class="detailTimestamp">{{ review.test }}</div>
+      <div v-if="review.timestamp" class="detailTimestamp">{{ dateNow }}</div>
       <div v-else class="detailTimestamp">시간 기록 없음</div>
     </main>
   </div>
@@ -16,7 +16,12 @@
 
 <script>
 export default {
-  props: ["review"]
+  props: ["review"],
+  data() {
+    return {
+      dateNow: this.review.timestamp.toDate()
+    };
+  }
 };
 </script>
 

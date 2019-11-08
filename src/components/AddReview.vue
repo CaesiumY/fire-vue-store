@@ -61,7 +61,7 @@ export default {
             title: this.title,
             body: this.body,
             tags: this.tags,
-            timestamp: "test"
+            timestamp: new Date()
           })
           .then(() => {
             this.reviews.push({
