@@ -8,18 +8,20 @@
       <div class="detailTags">
         <span class="detailTag" v-for="(tag, index) in review.tags" :key="index"># {{ tag }}</span>
       </div>
-      <div v-if="review.timestamp" class="detailTimestamp">{{ dateNow }}</div>
+      <div v-if="dateNow" class="detailTimestamp">{{ dateNow }}</div>
       <div v-else class="detailTimestamp">시간 기록 없음</div>
     </main>
   </div>
 </template>
 
 <script>
+import moment from "moment";
+moment.locale("ko");
 export default {
   props: ["review"],
   data() {
     return {
-      dateNow: this.review.timestamp.toDate()
+      dateNow: moment(this.review.timestamp.toDate()).format("LLLL")
     };
   }
 };
