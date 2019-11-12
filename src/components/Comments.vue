@@ -93,5 +93,8 @@ export default {
   position: absolute;
   top: 5px;
   right: 10px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
 </style>
