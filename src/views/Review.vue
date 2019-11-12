@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Comments :reviews="reviews" />
+    <Comments :reviews="reviews" @deleteItem="deleteItem" />
     <AddReview :reviews="reviews" />
   </div>
 </template>
@@ -17,6 +17,13 @@ export default {
     return {
       reviews: []
     };
+  },
+  methods: {
+    deleteItem(payload) {
+      this.reviews = this.reviews.filter(review => {
+        return review._id != payload.id;
+      });
+    }
   }
 };
 </script>
