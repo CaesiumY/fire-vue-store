@@ -49,6 +49,28 @@ https://fire-vue-store.firebaseapp.com/
     <img width="400px" src="./screenshots/fcm_android.jpg">
 </details>
 
+## 🔨설치하는 법
+
+1. 디렉토리의 최상위에 `tokens.json`을 생성한다.
+2. 아래처럼 자신의 파이어베이스 설정을 넣는다
+   ```json
+   {
+     "gcm_sender_id": "MY_GCM_KEY",
+     "firebaseConfig": {
+       "apiKey": "MY_API_KEY",
+       "authDomain": "MY_AUTH_DOMAIN",
+       "databaseURL": "MY_DATABASE_URL",
+       "projectId": "MY_PROJECT_ID",
+       "storageBucket": "MY_STORAGE_BUCKET",
+       "messagingSenderId": "MY_MESSAGING_SENDER_ID",
+       "appId": "MY_APP_ID"
+     }
+   }
+   ```
+   > 당연히 대문자로 이루어진 문자열에는 자신의 키를 넣어야 한다.
+3. `npm install`로 패키지 설치 후,
+4. `npm run serve`로 실행.
+
 ## 💬기타
 
 > 파이어 스토어의 용량이 상당하다.
